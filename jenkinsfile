@@ -1,12 +1,14 @@
 pipeline {
     agent {
-        label 'scala-2.13.1'
+        docker {
+            image 'hseeberger/scala-sbt'
+        }
     }
     stages {
         stage('Test') {
             steps {
                 echo 'Building..'
-                sh 'sbt package'
+                sh "sbt test"
             }
         }
     } 
