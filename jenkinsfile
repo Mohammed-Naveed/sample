@@ -1,28 +1,11 @@
 pipeline {
-    agent any
-
+    agent  any
     stages {
-
-        stage('Compile') {
-            steps {
-                echo "Compiling..."
-                sh "/usr/bin/git/sbt compile"
-            }
-        }
-
         stage('Test') {
             steps {
-                echo "Testing..."
-                sh "/usr/bin/git/sbt test"
+                echo 'Building..'
+                sh 'sbt package'
             }
         }
-
-        stage('Package') {
-            steps {
-                echo "Packaging..."
-                sh "/usr/bin/git/sbt package"
-            }
-        }
-
-    }
+    } 
 }
