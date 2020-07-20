@@ -25,7 +25,7 @@ pipeline {
                  
 
                 // Upload files from working directory 'dist' in your project workspace
-                s3Upload(bucket:"scalabuild", workingDir:'sam/target/scala-2.13/scala-examples_2.13-0.1-SNAPSHOT.jar', includePathPattern:'**/*');
+                s3Upload(bucket:"scalabuild", workingDir:'target/scala-2.13/scala-examples_2.13-0.1-SNAPSHOT.jar', includePathPattern:'**/*');
             }
 	    }
 
