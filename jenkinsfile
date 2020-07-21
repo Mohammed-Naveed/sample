@@ -5,7 +5,7 @@ pipeline {
        stage('Build') {
 			steps {
 				script {
-				      sh 'sbt package'
+				      sh 'sbt assembly'
       
 
 				}
